@@ -2,7 +2,7 @@ name: able-duck-41
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
