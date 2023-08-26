@@ -1,0 +1,39 @@
+---
+layout: layout/base.eta
+---
+<%~ await includeAsync("/layout/nav.eta",{site:site})%>
+<div class="home">
+    <div class="home_container">
+        <%const currentPages = search.pages("category=post","date=desc").slice(4*pagination.page-4,4*pagination.page)%>
+        <%for(const page of currentPages) {%>
+            <div class="home_card">
+                <a href="<%= page.data.url%>" class="home_card_title">
+                    <%= page.data.title%>
+                </a>
+                <div class="home_card_date">
+                    <%= filters.readableDate(page.data.date)%>
+                </div>
+                <div class="home_card_description">
+                    <%= page.data.description?(page.data.description.length>=40?page.data.description.slice(0,40)+"...":page.data.description):"暂无简介"%>
+                </div>
+                <div class="home_card_tags">
+                    <% for(const tag of page.data.tags){ %>
+                        <a href="/tags/<%= tag%>" class="home_card_tag"><%= tag%></a>
+                    <%}%>
+                </div>
+            </div>
+        <%}%>
+    </div>
+    <div class="home_change_page">
+        <%if(pagination.page!==1){%>
+            <a href="<%= pagination.previous%>">上一页</a>
+        <%}else{%>
+            <div></div>
+        <%}%>
+        <%if(pagination.page!==pagination.totalPages){%>
+                <a href="<%= pagination.next%>">下一页</a>
+        <%}else{%>
+            <div></div>
+        <%}%>
+    </div>
+</div>

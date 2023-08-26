@@ -1,0 +1,16 @@
+:root{
+    --main-color: #f36;
+    --second-color:#f36a;
+    --text-color: #333;
+    --bg-color: #fbc3;
+    --primary-color-dark : #fbc;
+    --text-color-dark : #fff;
+    --bg-color-dark : #333;
+    --default-radius : 0.25rem;
+}
+
+@font-face {
+    font-family: "title";
+    src: url("/static/font/title.woff2");
+    font-display: fallback;
+}

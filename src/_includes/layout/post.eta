@@ -1,0 +1,17 @@
+---
+layout: ./base.eta
+---
+
+<div class="post_background"></div>
+<div class="post_root">
+    <div class="post_title"><%= title%></div>
+    <div class="post_date"><%= filters.readableDate(date)%></div>
+    <div class="home_card_tags">
+        <%for(const tag of tags){%>
+            <a class="home_card_tag" href="/tags/<%= tag%>"><%=  tag%></a>
+        <%}%>
+    </div>
+    <hr>
+    <%~ content%>
+</div>
+

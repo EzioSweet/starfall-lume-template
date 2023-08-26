@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= site.title%></title>
+    <link rel="icon" href="<%= site.favicon%>">
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/github.css">
+</head>
+<body>
+<%~ content%>
+<%~ await includeAsync("/component/footer.eta")%>
+<script src="/script/sakura.min.js"></script>
+<script src="/script/init.js"></script>
+<script src="https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js" async></script>
+</body>
+</html>
